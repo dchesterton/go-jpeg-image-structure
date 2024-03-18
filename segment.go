@@ -294,11 +294,7 @@ func (s *Segment) IsIptc() bool {
 
 	photoshopInfo, err := s.parsePhotoshopInfo()
 	if err != nil {
-		if err == ErrNoPhotoshopData {
-			return false
-		}
-
-		log.Panic(err)
+		return false
 	}
 
 	// Bail if the Photoshop info doesn't have IPTC data.
